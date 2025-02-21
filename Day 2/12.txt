@@ -1,0 +1,19 @@
+# Data
+B <- c(7, 20, 40)
+C <- c(22, 28, 40)
+
+# Covariance between B and C
+cov_BC <- cov(B, C)
+
+# Covariance Matrix
+preferences <- data.frame(A = c(18, 2, 20), B = c(7, 20, 40), C = c(22, 28, 40))
+cov_matrix <- cov(preferences)
+
+# Correlation between B and C
+cor_BC <- cor(B, C)
+
+# Correlation Matrix
+cor_matrix <- cor(preferences)
+
+# Results
+list(cov_BC = cov_BC, cov_matrix = cov_matrix, cor_BC = cor_BC, cor_matrix = cor_matrix)

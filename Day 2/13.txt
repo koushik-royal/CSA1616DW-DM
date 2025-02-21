@@ -1,0 +1,15 @@
+# Data
+prices <- c(1, 1, 5, 5, 5, 5, 5, 8, 8, 10, 10, 10, 10, 12, 14, 14, 14, 15, 15, 15, 15, 15, 15, 18, 18, 18, 18, 18, 18, 18, 18, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 25, 25, 25, 25, 25, 28, 28, 30, 30, 30)
+
+# Equal-frequency binning
+library(classInt)
+bins <- classIntervals(prices, n = 5, style = "quantile")
+
+# Bin means
+bin_means <- tapply(prices, findInterval(prices, bins$brks), mean)
+
+# Bin boundary smoothing
+bin_boundaries <- tapply(prices, findInterval(prices, bins$brks), range)
+
+# Histogram
+hist(prices, breaks = 10, col = "blue", main = "Histogram of Prices", xlab = "Price")

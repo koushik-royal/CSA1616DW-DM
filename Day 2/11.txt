@@ -1,0 +1,8 @@
+# Load Dataset
+data(mtcars)
+
+# Line Plot
+plot(mtcars$mpg, type = "l", col = "red", ylim = range(mtcars$mpg, mtcars$qsec),
+     xlab = "Index", ylab = "Value", main = "MPG and QSEC")
+lines(mtcars$qsec, col = "blue")
+legend("topright", legend = c("MPG", "QSEC"), col = c("red", "blue"), lty = 1)

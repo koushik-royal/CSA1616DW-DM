@@ -1,0 +1,16 @@
+# Data
+class_A <- c(76, 35, 47, 64, 95, 66, 89, 36, 84)
+class_B <- c(51, 56, 84, 60, 59, 70, 63, 66, 50)
+
+# Summary Statistics
+mean_A <- mean(class_A)
+median_A <- median(class_A)
+range_A <- range(class_A)
+
+mean_B <- mean(class_B)
+median_B <- median(class_B)
+range_B <- range(class_B)
+
+# Boxplot
+boxplot(class_A, class_B, names = c("Class A", "Class B"), col = c("red", "blue"),
+        main = "Comparison of Class Performance")
