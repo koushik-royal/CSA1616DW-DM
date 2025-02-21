@@ -1,0 +1,21 @@
+library(arules)
+
+# Create transaction dataset
+transactions <- list(
+  c("SONY", "BPL", "LG"),
+  c("BPL", "SAMSUNG"),
+  c("BPL", "ONIDA"),
+  c("SONY", "BPL", "SAMSUNG"),
+  c("SONY", "ONIDA"),
+  c("BPL", "ONIDA"),
+  c("SONY", "ONIDA"),
+  c("SONY", "BPL", "ONIDA", "LG"),
+  c("SONY", "BPL", "ONIDA")
+)
+
+# Convert to transactions format
+trans <- as(transactions, "transactions")
+
+# FP-Growth Algorithm
+rules <- eclat(trans, parameter = list(support = 0.5, minlen = 2))
+inspect(rules)

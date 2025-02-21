@@ -1,0 +1,10 @@
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+
+# Equal-frequency partitioning
+quantiles <- quantile(marks, probs = seq(0, 1, length.out = 4))
+
+# Equal-width partitioning
+bins <- cut(marks, breaks = 3)
+
+# Histogram
+hist(marks, breaks = 5, col = "lightblue", main = "Histogram of Marks")

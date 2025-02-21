@@ -1,0 +1,11 @@
+library(e1071)
+
+# Load dataset
+data(iris)
+
+# Train Naive Bayes Model
+nb_model <- naiveBayes(Species ~ ., data = iris)
+pred <- predict(nb_model, iris)
+
+# Confusion Matrix
+table(Predicted = pred, Actual = iris$Species)

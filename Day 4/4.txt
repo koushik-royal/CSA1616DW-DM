@@ -1,0 +1,6 @@
+# Create data
+person <- c("Gopu", "Babu", "Baby", "Gopal", "Krishna", "Jai", "Dev", "Malini", "Hema", "Anu")
+vegetarian <- c("Yes", "Yes", "Yes", "No", "Yes", "No", "No", "Yes", "Yes", "Yes")
+
+# Count the number of vegetarians and non-vegetarians
+table(vegetarian)

@@ -1,0 +1,16 @@
+employee_data <- data.frame(
+  EmployeeID = c(111, 222, 333, 444, 555, 666),
+  Gender = c("Male", "Male", "Female", "Female", "Female", "Male"),
+  Age = c(28, 25, 26, 25, 30, 29),
+  Salary = c(150000, 150000, 160000, 160000, 170000, 200000),
+  Credit = c(39, 27, 42, 40, 64, 72)
+)
+
+# K-Means Clustering
+kmeans_emp <- kmeans(employee_data[, c(3, 4, 5)], centers = 3)
+employee_data$Cluster <- as.factor(kmeans_emp$cluster)
+
+# Visualization
+ggplot(employee_data, aes(Salary, Credit, color = Cluster)) +
+  geom_point(size = 4) + theme_minimal() +
+  labs(title = "Employee Clustering using K-Means")

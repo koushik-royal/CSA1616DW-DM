@@ -1,0 +1,9 @@
+library(rpart)
+
+# Load dataset
+diabetes <- read.csv("diabetes.csv")
+
+# Train Decision Tree
+dt_model <- rpart(Outcome ~ ., data = diabetes, method = "class")
+plot(dt_model)
+text(dt_model, use.n = TRUE)
