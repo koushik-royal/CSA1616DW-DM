@@ -1,0 +1,6 @@
+library(arules)
+library(arulesSequences)
+
+# Apply FP-Growth
+fpgrowth_rules <- eclat(trans, parameter = list(support = 0.3, minlen = 2))
+inspect(fpgrowth_rules)

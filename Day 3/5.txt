@@ -1,0 +1,11 @@
+# Load dataset
+diabetes <- read.csv("diabetes.csv")
+
+# Linear Regression
+lm_model <- lm(BloodPressure ~ Age, data = diabetes)
+summary(lm_model)
+
+# Plot the trend
+plot(diabetes$Age, diabetes$BloodPressure, main = "Blood Pressure vs Age",
+     xlab = "Age", ylab = "Blood Pressure", pch = 16, col = "blue")
+abline(lm_model, col = "red")

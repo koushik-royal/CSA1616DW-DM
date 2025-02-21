@@ -1,0 +1,17 @@
+library(e1071)
+
+# Load dataset
+data(iris)
+
+# Split Data
+set.seed(123)
+index <- sample(1:nrow(iris), 0.7 * nrow(iris))
+train <- iris[index, ]
+test <- iris[-index, ]
+
+# Naive Bayes Model
+nb_model <- naiveBayes(Species ~ ., data = train)
+nb_pred <- predict(nb_model, test)
+
+# Confusion Matrix
+table(Predicted = nb_pred, Actual = test$Species)

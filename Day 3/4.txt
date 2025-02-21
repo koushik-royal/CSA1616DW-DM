@@ -1,0 +1,8 @@
+library(rpart)
+
+# Decision Tree Model
+tree_model <- rpart(Species ~ ., data = train)
+tree_pred <- predict(tree_model, test, type = "class")
+
+# Confusion Matrix
+table(Predicted = tree_pred, Actual = test$Species)

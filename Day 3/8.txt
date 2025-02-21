@@ -1,0 +1,5 @@
+# Sample Data
+scores <- c(12, 15, 22, 29, 30, 35, 50, 60, 70, 75, 80, 95, 110)
+
+# Boxplot
+boxplot(scores, main = "Tennis Player Scores", col = "purple", horizontal = TRUE)

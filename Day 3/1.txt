@@ -1,0 +1,20 @@
+# Load library
+library(arules)
+
+# Sample Transactions
+transactions <- list(
+  c("M", "O", "N", "K", "E", "Y"),
+  c("D", "O", "N", "K", "E", "Y"),
+  c("M", "A", "K", "E"),
+  c("M", "U", "C", "K", "Y"),
+  c("C", "O", "O", "K", "I", "E")
+)
+
+# Convert to transactions format
+trans <- as(transactions, "transactions")
+
+# Apply Apriori algorithm
+rules <- apriori(trans, parameter = list(support = 0.3, confidence = 0.5))
+
+# View Rules
+inspect(rules)
